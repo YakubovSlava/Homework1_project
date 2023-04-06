@@ -1,0 +1,11 @@
+/venv/
+/tmp/lib/
+/tmp/bin/
+/tmp/CMakeFiles/
+/tmp/_deps/
+/tmp/projects/
+/tmp/libsrc/
+/tmp/cmake_install.cmake
+/tmp/testsuite/
+/tmp/CMakeCache.txt
+/tmp/Makefile
