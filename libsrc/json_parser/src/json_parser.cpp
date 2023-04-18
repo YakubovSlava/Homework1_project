@@ -81,12 +81,19 @@ void json_parser(std::string json){
     int j = 0;
     int count_open = 0;
     int count_close = 0;
+    int array_flg = 0;
     for (int i=0; i<json.size()-1; ++i){
 
         if(json[i]=='"'){
             quotes += 1;
         }
-        if(json[i] == ':' and quotes%2==0) {
+        if(json[i]=='['){
+            array_flg += 1;
+        }
+        if(json[i]==']'){
+            array_flg -= 1;
+        }
+        if(json[i] == ':' and quotes%2==0 and array_flg==0) {
 
             if (json[i + 1] == '"') {
                 temp = json[i + 2];
