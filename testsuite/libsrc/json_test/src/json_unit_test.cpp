@@ -10,6 +10,8 @@ protected:
 };
 
 
+
+
 //Проверка на простой словарь
 TEST(TestUtils, simple_json_testing)
 {
@@ -34,6 +36,8 @@ ASSERT_TRUE(output=="123 - INT\n"
 "123 - INT\n"
 "\"string_check2\" - STRING\n");
 }
+
+
 
 //Проверка на список
 TEST(TestUtils, array_testing)
