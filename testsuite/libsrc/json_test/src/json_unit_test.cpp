@@ -48,6 +48,21 @@ ASSERT_TRUE(output=="123 - INT\n"
 "\"check_string\" - STRING\n");
 }
 
+//Финальная проверка
+TEST(TestUtils, final_test)
+{
+testing::internal::CaptureStdout();
+std::string s = "{\"a\":\"123\", \"b\":\"checking\", \"c\":[\"123\", \"234\", {a:\"123\"}]}";
+json_parser(s);
+std::string output = testing::internal::GetCapturedStdout();
+ASSERT_TRUE(output=="\"123\" - STRING\n"
+"\"checking\" - STRING\n"
+"[\"123\",\"234\",{a:\"123\"}] - ARRAY\n"
+"\"123\" - STRING\n"
+"\"234\" - STRING\n"
+"{a:\"123\"} - DICT\n"
+"\"123\" - STRING\n");
+}
 
 
 
